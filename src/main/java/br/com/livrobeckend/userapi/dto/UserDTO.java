@@ -1,5 +1,7 @@
 package br.com.livrobeckend.userapi.dto;
 
+import br.com.livrobeckend.userapi.model.Users;
+
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Date;
@@ -86,4 +88,16 @@ public class UserDTO {
         usuarios.add(userDTO2);
         usuarios.add(userDTO3);
     }
+
+    public static UserDTO convert(Users users) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setNome(users.getNome());
+        userDTO.setEndereco(users.getEndereco());
+        userDTO.setCpf(users.getCpf());
+        userDTO.setEmail(users.getEmail());
+        userDTO.setTelefone(users.getTelefone());
+        userDTO.setDataCadastro(users.getDataCadastro());
+        return userDTO;
+    }
+
 }
